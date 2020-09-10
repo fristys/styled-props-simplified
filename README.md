@@ -2,6 +2,8 @@
 
 A small and simple library allowing you to set styled props in your [styled-components](https://www.styled-components.com/) stress-free.
 
+#### Update: Now with TypeScript definitions
+
 ## Installation
 
 npm
