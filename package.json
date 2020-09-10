@@ -1,13 +1,14 @@
 {
   "name": "@fristys/styled-props-simplified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small and simple library allowing you to set styled props in your styled-components stress-free",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "babel --source-maps -d dist src",
     "minify": "uglifyjs dist/index.js --compress --source-map \"content=inline\" --mangle -o dist/index.js",
-    "prepublish": "yarn run clean && yarn run build && yarn run minify",
+    "copy-definitions": "cpy src/index.d.ts lib && cpy src/index.d.ts dist",
+    "prepare": "yarn run clean && yarn run build && yarn run minify && yarn run copy-definitions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,5 +34,8 @@
     "babel-preset-react": "^6.24.1",
     "rimraf": "^3.0.0",
     "uglify-js": "^3.6.0"
+  },
+  "dependencies": {
+    "cpy-cli": "^3.1.1"
   }
 }
